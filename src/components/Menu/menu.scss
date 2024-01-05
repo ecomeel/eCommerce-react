@@ -1,0 +1,15 @@
+.menu {
+    margin-left: 25px;
+    margin-right: 25px;
+    display: flex;
+    column-gap: 30px;
+
+    &__item {
+        cursor: pointer;
+        transition: opacity ease .3s;
+
+        &:hover {
+            opacity: .5;
+        }
+    }
+}
