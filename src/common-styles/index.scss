@@ -1,7 +1,15 @@
 @import "./reset.scss";
+@import "./vars.scss";
 
 body,
 html {
+    padding-top: 30px;
+    padding-bottom: 30px;
     background-color: #414648;
     color: #dfdfdf;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1000px;
 }

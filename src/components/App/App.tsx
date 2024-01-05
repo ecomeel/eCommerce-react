@@ -1,12 +1,9 @@
-import React from 'react';
-
-import './app.scss'
+import "./app.scss";
 
 export const App: React.FC = () => {
-  console.log('hello')
-  return (
-    <div className='app'>
-      hello
-    </div>
-  )
-}
+    return (
+        <div className="app">
+            <div className="container">hello World</div>
+        </div>
+    );
+};
