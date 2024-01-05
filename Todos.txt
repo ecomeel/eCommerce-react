@@ -13,3 +13,5 @@
 
 2 State
     - initilize products state from db
+
+Button add to cart to another componentt

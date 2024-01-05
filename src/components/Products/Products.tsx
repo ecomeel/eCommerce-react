@@ -18,7 +18,7 @@ export const Products: React.FC = () => {
         },
         {
             id: 2,
-            title: "white chair",
+            title: "White chair",
             img: "chair-white.jpeg",
             desc: "Lorem, ipsum dolor sit amet consectetur adipisicing.",
             category: "chairs",
@@ -42,16 +42,16 @@ export const Products: React.FC = () => {
         },
         {
             id: 5,
-            title: "Wall Light",
+            title: "Wall Lights",
             img: "wall-light.jpeg",
             desc: "Lorem, ipsum dolor sit amet consectetur adipisicing.",
-            category: "chairs",
+            category: "lamps",
             price: "49.99",
         },
     ]
 
     return (
-        <main>
+        <main className="products">
             {products.map((product: IProduct) => (
                 <Product
                     key={product.id}
