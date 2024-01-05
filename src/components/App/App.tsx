@@ -1,6 +1,6 @@
 import { Header } from "../Header/Header";
+import { Products } from "../Products/Products";
 import { Footer } from "../Footer/Footer";
-
 import "./app.scss";
 
 export const App: React.FC = () => {
@@ -8,7 +8,9 @@ export const App: React.FC = () => {
         <div className="app">
             <div className="container">
                 <Header />
-                <div className="content">Content</div>
+                {/* <Products items={products} /> */}
+                <Products 
+                />
                 <Footer />
             </div>
         </div>

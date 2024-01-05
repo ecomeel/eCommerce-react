@@ -1,0 +1,16 @@
+1. Database
+    - connect db (firebase) ✔️
+    - create db ✔️
+    - get products from DB✔️
+
+    product = {
+        id,
+        title,
+        img,
+        desc,
+        category,
+        price
+    }
+
+2 State
+    - initilize products state from db
