@@ -1,54 +1,26 @@
 import React from "react";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
+import { RootState } from "../../store/store";
 import { Product } from "../Product/Product";
-
+import { setProducts } from "../../store/slices/productsSlice";
 import { IProduct } from "../../types/interfaces";
-
+import { getProductsFromDatabase } from "../../firebase/firebase";
 import "./products.scss";
+// import { RootState } from "@reduxjs/toolkit/query";
 
 export const Products: React.FC = () => {
-    const products: IProduct[] = [
-        {
-            id: 1,
-            title: "Gray chair",
-            img: "chair-grey.jpeg",
-            desc: "Lorem, ipsum dolor sit amet consectetur adipisicing.",
-            category: "chairs",
-            price: "49.99",
-        },
-        {
-            id: 2,
-            title: "White chair",
-            img: "chair-white.jpeg",
-            desc: "Lorem, ipsum dolor sit amet consectetur adipisicing.",
-            category: "chairs",
-            price: "49.99",
-        },
-        {
-            id: 3,
-            title: "Sofa",
-            img: "sofa.jpeg",
-            desc: "Lorem, ipsum dolor sit amet consectetur adipisicing.",
-            category: "sofas",
-            price: "100",
-        },
-        {
-            id: 4,
-            title: "Table",
-            img: "table.webp",
-            desc: "Lorem, ipsum dolor sit amet consectetur adipisicing.",
-            category: "tables",
-            price: "85.99",
-        },
-        {
-            id: 5,
-            title: "Wall Lights",
-            img: "wall-light.jpeg",
-            desc: "Lorem, ipsum dolor sit amet consectetur adipisicing.",
-            category: "lamps",
-            price: "49.99",
-        },
-    ]
+    const dispatch = useDispatch();
+    useEffect(() => {
+        getProductsFromDatabase().then(response => {
+            dispatch(setProducts(response))
+        });
+    }, []);
+
+
+    const products = useSelector((state: RootState) => state.products.items)
 
     return (
         <main className="products">

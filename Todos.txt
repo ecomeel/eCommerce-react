@@ -1,6 +1,7 @@
 1. Database
-    - connect db (firebase)
-    - get products from DB
+    - connect db (firebase) ✔️
+    - create db ✔️
+    - get products from DB✔️
 
     product = {
         id,
@@ -13,5 +14,3 @@
 
 2 State
     - initilize products state from db
-
-Button add to cart to another componentt
