@@ -2,14 +2,20 @@
 @import "./vars.scss";
 
 body,
-html {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    background-color: #414648;
-    color: #dfdfdf;
+html,
+#root {
+    background-color: #fff;
+    font-family: "Montserrat";
+    font-weight: 300;
+    color: #222;
+    height: 100%;
 }
 
 .container {
     margin: 0 auto;
-    max-width: 1000px;
+    max-width: 1280px;
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
 }
