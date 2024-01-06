@@ -15,7 +15,7 @@ export const Menu: React.FC = () => {
 
     return (
         <nav className="menu">
-            <NavLink className={setActive} to="/products">
+            <NavLink className={setActive} to="/">
                 Продукты
             </NavLink>
             <NavLink className={setActive} to="/about">
