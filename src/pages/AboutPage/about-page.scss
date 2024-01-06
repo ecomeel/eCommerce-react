@@ -1,0 +1,14 @@
+.about {
+    p {
+        margin-top: 25px;
+        font-size: 20px;
+        text-align: justify;
+        float: left;
+        text-indent: 10%;
+        width: 66%;
+
+        &:nth-child(2n -1) {
+            float: right;
+        }
+    }
+}

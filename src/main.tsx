@@ -7,7 +7,7 @@ import "./firebase/firebase.ts";
 import { store } from "./store/store.ts";
 import { App } from "./components/App/App.tsx";
 
-import "./common-styles/index.scss";
+import "./styles/index.scss";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
