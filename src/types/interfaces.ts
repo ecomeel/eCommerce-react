@@ -4,5 +4,9 @@ export interface IProduct {
     img: string,
     desc: string,
     category: string,
-    price: number | string
+    price: number
+}
+
+export interface IProductWithAmount extends IProduct {
+    amount: number
 }

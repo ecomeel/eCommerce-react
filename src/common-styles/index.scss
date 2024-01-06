@@ -19,3 +19,13 @@ html,
     display: flex;
     flex-direction: column;
 }
+
+a {
+    font: inherit;
+    color: inherit
+}
+
+.popup_active {
+    opacity: 1;
+    visibility: visible;
+}

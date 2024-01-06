@@ -1,16 +1,2 @@
-1. Database
-    - connect db (firebase) ✔️
-    - create db ✔️
-    - get products from DB✔️
+Стилизовать popup корзины
 
-    product = {
-        id,
-        title,
-        img,
-        desc,
-        category,
-        price
-    }
-
-2 State
-    - initilize products state from db

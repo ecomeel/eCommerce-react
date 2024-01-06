@@ -1,13 +1,35 @@
 import React from "react";
+import { FaBasketShopping } from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
 
-import './menu.scss'
+import "./menu.scss";
+
+const setActive = ({ isActive }: { isActive: boolean }) =>
+    isActive ? "menu__item menu__item_active" : "menu__item";
 
 export const Menu: React.FC = () => {
+    function handleOpenCart():void {
+        const cartNode = document.getElementById('cart');
+        cartNode?.classList.toggle('popup_active')
+    }
+
     return (
-        <ul className="menu">
-            <li className="menu__item">Про нас</li>
-            <li className="menu__item">Контакты</li>
-            <li className="menu__item">Кабинет</li>
-        </ul>
+        <nav className="menu">
+            <NavLink className={setActive} to="/products">
+                Продукты
+            </NavLink>
+            <NavLink className={setActive} to="">
+                Про нас
+            </NavLink>
+            <NavLink className={setActive} to="">
+                Контакты
+            </NavLink>
+            <NavLink className={setActive} to="">
+                Кабинет
+            </NavLink>
+            {/* <NavLink className={setActive} to="/cart"> */}
+                <FaBasketShopping onClick={handleOpenCart} className="menu__item menu__item_cart" />
+            {/* </NavLink> */}
+        </nav>
     );
 };

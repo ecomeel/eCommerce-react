@@ -3,11 +3,12 @@ import React from 'react'
 import './button.scss'
 
 interface IButtonProps {
-  title: string
+  title: string;
+  handleClick: () => void
 }
 
 export const Button: React.FC<IButtonProps> = (props: IButtonProps) => {
   return (
-    <button className='button'>{props.title}</button>
+    <button onClick={props.handleClick} className='button'>{props.title}</button>
   )
 }
