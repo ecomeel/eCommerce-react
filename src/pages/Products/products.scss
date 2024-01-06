@@ -42,3 +42,22 @@
         }
     }
 }
+
+@media(max-width: 950px) {
+    .products {
+        &__banner {
+            height: 300px;
+            margin-bottom: 20px;
+
+            &::after {
+                top: 30px;
+                left: 30px;
+                font-size: 25px;
+            }
+            &::before {
+                top: 100px;
+                left: 30px;
+            }
+        }
+    }
+}

@@ -2,6 +2,7 @@
     margin-left: 25px;
     margin-right: 25px;
     display: flex;
+    flex-wrap: wrap;
     column-gap: 30px;
     align-items: center;
 
@@ -25,6 +26,17 @@
         }
         &_active {
             border-bottom: 1px solid gray;
+        }
+    }
+}
+
+@media(max-width: 680px) {
+    .menu {
+        margin-left: 10px;
+        margin-right: 10px;
+        column-gap: 15px;
+        &__item {
+            font-size: 15px;
         }
     }
 }

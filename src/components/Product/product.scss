@@ -3,6 +3,7 @@
     width: 33%;
     background-color: #f5f5f5;
     border-radius: 30px;
+    min-width: 200px;
     cursor: pointer;
     transition: transform ease .5s;
 
@@ -44,4 +45,20 @@
         color: #5fa36a
     }
 
+}
+
+@media(max-width: 950px) {
+    .product {
+        &__price-wrapper {
+            flex-direction: column-reverse;
+            row-gap: 20px
+            ;
+        }
+        &__title {
+            font-size: 20px;
+        }
+        &__image {
+            max-height: 200px;
+        }
+    }
 }
