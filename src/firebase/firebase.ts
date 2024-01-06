@@ -5,12 +5,12 @@ import { collection, getDocs } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDOZy1AFXgUibhFlGEdlbGVef-yaY_7jl4",
-    authDomain: "furniture-shop-7a7c1.firebaseapp.com",
-    projectId: "furniture-shop-7a7c1",
-    storageBucket: "furniture-shop-7a7c1.appspot.com",
-    messagingSenderId: "221783001736",
-    appId: "1:221783001736:web:c9a45ad72d3c2f74672d3d",
+    apiKey: import.meta.env.VITE_API_KEY,
+    authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_APP_ID,
 };
 
 // Initialize Firebase
