@@ -10,15 +10,14 @@ export const Paytype: React.FC = () => {
     return (
         <div className="paytype">
             <h2 className="paytype__title">Способ оплаты: </h2>
-            {paytype ? (
-                <p>
-                    {paytype == "card"
-                        ? "Оплата картой при получении"
-                        : "Оплата наличными при получении"}
-                </p>
-            ) : (
-                <p>Способ оплаты не выбран</p>
-            )}
+            <p>
+                {!paytype
+                    ? "Способ оплаты не выбран"
+                    : paytype == "card"
+                    ? "Оплата картой при получении"
+                    : "Оплата наличными при получении"}
+            </p>
+
             <Button
                 title="Изменить"
                 handleClick={() => changeVisibilityPopup("paytypePopup")}

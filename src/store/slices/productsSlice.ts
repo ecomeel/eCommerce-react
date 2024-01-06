@@ -16,9 +16,7 @@ const productsSlice = createSlice({
     initialState,
     reducers: {
         setProducts(state, action: PayloadAction<IProduct[]>) {
-            action.payload.forEach((product: IProduct) => {
-                state.items.push(product)
-            })
+            state.items = action.payload
         }
     }
 })

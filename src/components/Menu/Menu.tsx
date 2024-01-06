@@ -24,7 +24,7 @@ export const Menu: React.FC = () => {
             <NavLink className={setActive} to="/feedback">
                 Контакты
             </NavLink>
-            <NavLink className={setActive} to="">
+            <NavLink className={setActive} to="/account">
                 Кабинет
             </NavLink>
             <FaBasketShopping

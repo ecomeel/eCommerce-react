@@ -22,8 +22,7 @@ export const AddressPopup: React.FC = () => {
     }
 
     function handleSaveAddress(): void {
-        if (isInputsEmpty('popup__input')) return 
-
+        if (isInputsEmpty('.popup__input')) return 
         dispatch(setNewAddress(address));
         changeVisibilityPopup('addressPopup')
     }

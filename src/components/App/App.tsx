@@ -4,6 +4,7 @@ import { Products } from "../../pages/Products/Products";
 import { AboutPage } from "../../pages/AboutPage/AboutPage";
 import { TakeOrderPage } from "../../pages/TakeOrderPage/TakeOrderPage";
 import { FeedbackPage } from "../../pages/FeedbackPage/FeedbackPage";
+import { Account } from "../../pages/Account/Account";
 import { Layout } from "../commons/Layout/Layout";
 import { AddressPopup } from "../popups/AddressPopup/AddressPopup";
 import { PaytypePopup } from "../popups/PaytypePopup/PaytypePopup";
@@ -19,6 +20,7 @@ export const App: React.FC = () => {
                         <Route path="/products" element={<Products />} />
                         <Route path="/about" element={<AboutPage />} />
                         <Route path="/feedback" element={<FeedbackPage />} />
+                        <Route path="/account" element={<Account />} />
                         <Route path="/takeorder" element={<TakeOrderPage />} />
                     </Route>
                 </Routes>

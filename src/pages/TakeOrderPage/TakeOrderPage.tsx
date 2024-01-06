@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import { Button } from "../../components/commons/Button/Button";
 import { Address } from "../../components/Address/Address";
@@ -10,6 +11,7 @@ import {
     getOrderAddress,
     getOrderPaytype,
 } from "../../store/selectors/selectors";
+import { isValidOrder } from "../../utils/utils";
 import { setOrder } from "../../store/slices/orderSlice";
 import "./take-order-page.scss";
 
@@ -17,21 +19,15 @@ export const TakeOrderPage: React.FC = () => {
     const dispatch = useDispatch();
     const cart = getCartItems();
     const orderCost = getCartCost();
+    const paytype = getOrderPaytype();
+    const address = getOrderAddress();
+    const navigate = useNavigate();
 
     function handleTakeOrder(): void {
-        if (!getOrderPaytype()) {
-            alert("Выберите тип оплаты");
-            return;
-        }
-
-        if (!getOrderAddress().name) {
-            alert("Заполните данные для связи");
-            return;
-        }
-
+        if (!isValidOrder(paytype, address, cart)) return;
         dispatch(setOrder(cart));
-
         alert("Спасибо за заказ! С вами свяжутся в ближайшее время.");
+        navigate("/");
     }
 
     return (

@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
 import { IProductWithAmount, IProduct } from "../../types/interfaces";
+import { getCartCost } from "../../utils/utils";
 
 interface ICart {
     items: IProductWithAmount[];
@@ -11,14 +12,6 @@ const initialState: ICart = {
     items: [],
     cartCost: 0,
 };
-
-function countCost(list: IProductWithAmount[]): number {
-    let cost: number = 0;
-    list.forEach((item: IProductWithAmount) => {
-        cost += item.price * item.amount;
-    });
-    return Number(cost.toFixed(2))
-}
 
 const cartSlice = createSlice({
     name: "cart",
@@ -35,17 +28,13 @@ const cartSlice = createSlice({
                     amount: 1,
                 });
             }
-            state.cartCost = countCost(state.items)
+            state.cartCost = getCartCost(state.items)
         },
         deleteProductFromCart(state, action: PayloadAction<string>) {
             state.items = state.items.filter(
                 (item) => item.id != action.payload
             );
-            state.cartCost = 0;
-            state.items.forEach((item) => [
-                (state.cartCost += item.price * item.amount),
-            ]);
-            state.cartCost = countCost(state.items)
+            state.cartCost = getCartCost(state.items)
         },
     },
 });

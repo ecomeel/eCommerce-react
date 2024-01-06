@@ -2,31 +2,29 @@ import React from "react";
 import { useDispatch } from "react-redux";
 
 import { Button } from "../../commons/Button/Button";
-import { changeVisibilityPopup } from "../../../utils/utils";
+import { changeVisibilityPopup, getSelectedOptionValue, isPaytypeValid } from "../../../utils/utils";
 import { setPaytype } from "../../../store/slices/orderSlice";
 
 export const PaytypePopup: React.FC = () => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+
     function handleSavePaytype(): void {
-        let paytype = "";
-        const inputsNodes: NodeListOf<HTMLInputElement> =
-            document.querySelectorAll(".paytype__input");
-        inputsNodes.forEach((inputNode) => {
-            if (inputNode.checked) paytype = inputNode.value;
-        });
-        if (!paytype) {
-            alert("Выберите тип оплаты!");
-            return;
-        }
+        const paytype = getSelectedOptionValue('.paytype__input')
 
-        dispatch(setPaytype(paytype));
-        changeVisibilityPopup('paytypePopup')
+        if (!isPaytypeValid(paytype)) return 
 
+        dispatch(setPaytype(paytype))
+        changeVisibilityPopup("paytypePopup");
     }
     return (
         <div id="paytypePopup" className="paytype-popup popup">
             <div className="popup__content">
-                <button className="popup__close-btn" onClick={() => changeVisibilityPopup('paytypePopup')}>X</button>
+                <button
+                    className="popup__close-btn"
+                    onClick={() => changeVisibilityPopup("paytypePopup")}
+                >
+                    X
+                </button>
                 <h2>Выберите тип оплаты</h2>
                 <label className="popup__label" htmlFor="paytypeCard">
                     <input
@@ -38,7 +36,7 @@ export const PaytypePopup: React.FC = () => {
                     />
                     Картой
                 </label>
-                <label className="popup__label" htmlFor="paytypeCard">
+                <label className="popup__label" htmlFor="paytypeCash">
                     <input
                         className="paytype__input"
                         type="radio"
