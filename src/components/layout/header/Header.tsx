@@ -1,12 +1,11 @@
 import React from "react";
 
-import { Menu } from "../Menu/Menu";
-import { Cart } from "../Cart/Cart";
+import { Menu } from "./menu/Menu";
+import { Cart } from "./cart/Cart";
 
 import "./header.scss";
 
 export const Header: React.FC = () => {
-
     return (
         <header className="header">
             <div className="header__logo-wrapper">

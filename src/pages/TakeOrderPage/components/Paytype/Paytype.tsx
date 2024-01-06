@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Button } from "../commons/Button/Button";
-import { changeVisibilityPopup } from "../../utils/utils";
-import { getOrderPaytype } from "../../store/selectors/selectors";
+import { Button } from "../../../../components/Button/Button";
+import { changeVisibilityPopup } from "../../../../utils/utils";
+import { getOrderPaytype } from "../../../../store/selectors/selectors";
 import "./paytype.scss";
 
 export const Paytype: React.FC = () => {

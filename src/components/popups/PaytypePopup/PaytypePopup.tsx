@@ -1,19 +1,23 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import { Button } from "../../commons/Button/Button";
-import { changeVisibilityPopup, getSelectedOptionValue, isPaytypeValid } from "../../../utils/utils";
-import { setPaytype } from "../../../store/slices/orderSlice";
+import { Button } from "components/Button/Button";
+import {
+    changeVisibilityPopup,
+    getSelectedOptionValue,
+    isPaytypeValid,
+} from "utils/utils";
+import { setPaytype } from "store/slices/orderSlice";
 
 export const PaytypePopup: React.FC = () => {
     const dispatch = useDispatch();
 
     function handleSavePaytype(): void {
-        const paytype = getSelectedOptionValue('.paytype__input')
+        const paytype = getSelectedOptionValue(".paytype__input");
 
-        if (!isPaytypeValid(paytype)) return 
+        if (!isPaytypeValid(paytype)) return;
 
-        dispatch(setPaytype(paytype))
+        dispatch(setPaytype(paytype));
         changeVisibilityPopup("paytypePopup");
     }
     return (

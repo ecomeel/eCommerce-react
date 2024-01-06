@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
-import { Product } from "../../components/Product/Product";
-import { Loader } from "../../components/commons/Loader/Loader";
+import { Product } from "./components/Product/Product";
+import { Loader } from "../../components/Loader/Loader";
 
 import { RootState } from "../../store/store";
 import { setProducts } from "../../store/slices/productsSlice";

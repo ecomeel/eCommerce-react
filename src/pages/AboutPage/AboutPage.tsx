@@ -1,8 +1,11 @@
-import React from 'react'
-import './about-page.scss'
+import React from "react";
+import "./about-page.scss";
 
 export const AboutPage: React.FC = () => {
-  return (
-    <div className='about'>About us</div>
-  )
-}
+    return (
+        <div className="about">
+            About us
+            <p>Hello</p>
+        </div>
+    );
+};

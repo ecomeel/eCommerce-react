@@ -1,9 +1,9 @@
 import React from "react";
 
-import { Button } from "../commons/Button/Button";
-import { changeVisibilityPopup } from "../../utils/utils";
+import { Button } from "../../../../components/Button/Button";
+import { changeVisibilityPopup } from "../../../../utils/utils";
 import "./address.scss";
-import { getOrderAddress } from "../../store/selectors/selectors";
+import { getOrderAddress } from "../../../../store/selectors/selectors";
 
 export const Address: React.FC = () => {
     const address = getOrderAddress();

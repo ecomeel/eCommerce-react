@@ -1,11 +1,11 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import { Button } from "../commons/Button/Button";
+import { Button } from "components/Button/Button";
 
 import "./product.scss";
-import { IProduct } from "../../types/interfaces";
-import { addProductToCard } from "../../store/slices/cartSlice";
+import { IProduct } from "types/interfaces";
+import { addProductToCard } from "store/slices/cartSlice";
 
 export const Product: React.FC<IProduct> = (props: IProduct) => {
     const { title, img, desc, price } = { ...props };

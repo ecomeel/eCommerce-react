@@ -1,9 +1,9 @@
 import { Outlet } from "react-router-dom";
 
-import { Header } from "../../Header/Header";
-import { Footer } from "../../Footer/Footer";
+import { Header } from "./header/Header";
+import { Footer } from "./footer/Footer";
 
-export const Layout:React.FC = () => {
+export const Layout: React.FC = () => {
     return (
         <>
             <Header />
@@ -11,4 +11,4 @@ export const Layout:React.FC = () => {
             <Footer />
         </>
     );
-}
+};

@@ -3,6 +3,8 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { collection, getDocs } from "firebase/firestore";
 
+import { IProduct } from "../types/interfaces";
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: import.meta.env.VITE_API_KEY,
@@ -16,8 +18,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
-import { IProduct } from "../types/interfaces";
 
 export async function getProductsFromDatabase() {
     const items: IProduct[] = [];

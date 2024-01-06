@@ -2,9 +2,9 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { Button } from "../../components/commons/Button/Button";
-import { Address } from "../../components/Address/Address";
-import { Paytype } from "../../components/Paytype/Paytype";
+import { Button } from "../../components/Button/Button";
+import { Address } from "./components/Address/Address";
+import { Paytype } from "./components/Paytype/Paytype";
 import {
     getCartCost,
     getCartItems,

@@ -19,6 +19,11 @@
         width: 100%;
         height: 500px;
 
+        @media(max-width: 950px) {
+            height: 300px;
+            margin-bottom: 20px;
+        }
+
         &::after {
             content: "Лучшие товары для вашего дома";
             position: absolute;
@@ -28,6 +33,12 @@
             font-size: 40px;
             font-weight: 600;
             color: #fafafa;
+
+            @media(max-width: 950px){
+                top: 30px;
+                left: 30px;
+                font-size: 25px;
+            }
         }
 
         &::before {
@@ -39,22 +50,8 @@
             font-size: 18px;
             font-weight: 300;
             color: #fafafa;
-        }
-    }
-}
 
-@media(max-width: 950px) {
-    .products {
-        &__banner {
-            height: 300px;
-            margin-bottom: 20px;
-
-            &::after {
-                top: 30px;
-                left: 30px;
-                font-size: 25px;
-            }
-            &::before {
+            @media(max-width: 950px){
                 top: 100px;
                 left: 30px;
             }

@@ -2,12 +2,12 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { isInputsEmpty, changeVisibilityPopup } from "../../../utils/utils";
-import { setNewAddress } from "../../../store/slices/orderSlice";
-import { Button } from "../../commons/Button/Button";
+import { isInputsEmpty, changeVisibilityPopup } from "utils/utils";
+import { setNewAddress } from "store/slices/orderSlice";
+import { Button } from "components/Button/Button";
 
 export const AddressPopup: React.FC = () => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     const [address, setAddress] = useState({
         name: "",
         phone: "",
@@ -17,20 +17,25 @@ export const AddressPopup: React.FC = () => {
     function handleInputChanged(e: React.ChangeEvent<HTMLInputElement>): void {
         setAddress({
             ...address,
-            [e.target.name]: e.target.value
-        })
+            [e.target.name]: e.target.value,
+        });
     }
 
     function handleSaveAddress(): void {
-        if (isInputsEmpty('.popup__input')) return 
+        if (isInputsEmpty(".popup__input")) return;
         dispatch(setNewAddress(address));
-        changeVisibilityPopup('addressPopup')
+        changeVisibilityPopup("addressPopup");
     }
 
     return (
         <div id="addressPopup" className="address-popup popup">
             <div className="popup__content">
-                <button className="popup__close-btn" onClick={() => changeVisibilityPopup('addressPopup')}>X</button>
+                <button
+                    className="popup__close-btn"
+                    onClick={() => changeVisibilityPopup("addressPopup")}
+                >
+                    X
+                </button>
                 <input
                     className="popup__input"
                     value={address.name}
@@ -51,7 +56,7 @@ export const AddressPopup: React.FC = () => {
                     className="popup__input"
                     value={address.email}
                     onChange={handleInputChanged}
-                    name='email'
+                    name="email"
                     type="email"
                     placeholder="mail"
                 />
@@ -59,7 +64,7 @@ export const AddressPopup: React.FC = () => {
                     className="popup__input"
                     value={address.address}
                     onChange={handleInputChanged}
-                    name='address'
+                    name="address"
                     type="address"
                     placeholder="Address"
                 />

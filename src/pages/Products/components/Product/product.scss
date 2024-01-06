@@ -5,7 +5,7 @@
     border-radius: 30px;
     min-width: 200px;
     cursor: pointer;
-    transition: transform ease .5s;
+    transition: transform ease 0.5s;
 
     &:hover {
         transform: scale(1.05);
@@ -18,6 +18,9 @@
         object-fit: cover;
         object-position: center center;
 
+        @media(max-width: 950px) {
+            max-height: 200px;
+        }
     }
     &__text-wrapper {
         padding: 30px;
@@ -29,6 +32,10 @@
     &__title {
         font-weight: 600;
         font-size: 30px;
+
+        @media (max-width: 950px) {
+            font-size: 20px;
+        }
     }
     &__desc {
         text-align: justify;
@@ -38,27 +45,15 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @media (max-width: 950px) {
+            flex-direction: column-reverse;
+            row-gap: 20px;
+        }
     }
     &__price {
         font-weight: 600;
         font-size: 20px;
-        color: #5fa36a
-    }
-
-}
-
-@media(max-width: 950px) {
-    .product {
-        &__price-wrapper {
-            flex-direction: column-reverse;
-            row-gap: 20px
-            ;
-        }
-        &__title {
-            font-size: 20px;
-        }
-        &__image {
-            max-height: 200px;
-        }
+        color: #5fa36a;
     }
 }

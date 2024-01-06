@@ -5,7 +5,7 @@ import { AboutPage } from "../../pages/AboutPage/AboutPage";
 import { TakeOrderPage } from "../../pages/TakeOrderPage/TakeOrderPage";
 import { FeedbackPage } from "../../pages/FeedbackPage/FeedbackPage";
 import { Account } from "../../pages/Account/Account";
-import { Layout } from "../commons/Layout/Layout";
+import { Layout } from "../layout/Layout";
 import { AddressPopup } from "../popups/AddressPopup/AddressPopup";
 import { PaytypePopup } from "../popups/PaytypePopup/PaytypePopup";
 import "./app.scss";

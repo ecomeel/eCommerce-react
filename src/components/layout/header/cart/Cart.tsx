@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import "./cart.scss";
-import { deleteProductFromCart } from "../../store/slices/cartSlice";
-import { getCartItems, getCartCost } from "../../store/selectors/selectors";
+import { deleteProductFromCart } from "../../../../store/slices/cartSlice";
+import {
+    getCartItems,
+    getCartCost,
+} from "../../../../store/selectors/selectors";
 
 export const Cart: React.FC = () => {
     const cart = getCartItems();
