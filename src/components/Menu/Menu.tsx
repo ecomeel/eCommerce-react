@@ -8,9 +8,9 @@ const setActive = ({ isActive }: { isActive: boolean }) =>
     isActive ? "menu__item menu__item_active" : "menu__item";
 
 export const Menu: React.FC = () => {
-    function handleOpenCart():void {
-        const cartNode = document.getElementById('cart');
-        cartNode?.classList.toggle('popup_active')
+    function handleOpenCart(): void {
+        const cartNode = document.getElementById("cart");
+        cartNode?.classList.toggle("popup_active");
     }
 
     return (
@@ -18,18 +18,19 @@ export const Menu: React.FC = () => {
             <NavLink className={setActive} to="/products">
                 Продукты
             </NavLink>
-            <NavLink className={setActive} to="">
+            <NavLink className={setActive} to="/about">
                 Про нас
             </NavLink>
-            <NavLink className={setActive} to="">
+            <NavLink className={setActive} to="/feedback">
                 Контакты
             </NavLink>
             <NavLink className={setActive} to="">
                 Кабинет
             </NavLink>
-            {/* <NavLink className={setActive} to="/cart"> */}
-                <FaBasketShopping onClick={handleOpenCart} className="menu__item menu__item_cart" />
-            {/* </NavLink> */}
+            <FaBasketShopping
+                onClick={handleOpenCart}
+                className="menu__item menu__item_cart"
+            />
         </nav>
     );
 };

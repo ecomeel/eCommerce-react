@@ -1,5 +1,5 @@
 export interface IProduct {
-    id: number | string,
+    id: string,
     title: string,
     img: string,
     desc: string,
@@ -9,4 +9,11 @@ export interface IProduct {
 
 export interface IProductWithAmount extends IProduct {
     amount: number
+}
+
+export interface IAddress {
+    name: string,
+    phone: string,
+    email: string,
+    address: string
 }

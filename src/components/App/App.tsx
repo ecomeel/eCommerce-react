@@ -1,8 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 
 import { Products } from "../../pages/Products/Products";
-// import { Cart } from "../Cart/Cart";
+import { AboutPage } from "../../pages/AboutPage/AboutPage";
+import { TakeOrderPage } from "../../pages/TakeOrderPage/TakeOrderPage";
+import { FeedbackPage } from "../../pages/FeedbackPage/FeedbackPage";
 import { Layout } from "../commons/Layout/Layout";
+import { AddressPopup } from "../popups/AddressPopup/AddressPopup";
+import { PaytypePopup } from "../popups/PaytypePopup/PaytypePopup";
 import "./app.scss";
 
 export const App: React.FC = () => {
@@ -13,10 +17,14 @@ export const App: React.FC = () => {
                     <Route path="/" element={<Layout />}>
                         <Route index element={<Products />} />
                         <Route path="/products" element={<Products />} />
-                        {/* <Route path="/cart" element={<Cart />} /> */}
+                        <Route path="/about" element={<AboutPage />} />
+                        <Route path="/feedback" element={<FeedbackPage />} />
+                        <Route path="/takeorder" element={<TakeOrderPage />} />
                     </Route>
                 </Routes>
             </div>
+            <AddressPopup />
+            <PaytypePopup />
         </div>
     );
 };
