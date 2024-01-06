@@ -5,6 +5,8 @@ import { AboutPage } from "../../pages/AboutPage/AboutPage";
 import { TakeOrderPage } from "../../pages/TakeOrderPage/TakeOrderPage";
 import { FeedbackPage } from "../../pages/FeedbackPage/FeedbackPage";
 import { Layout } from "../commons/Layout/Layout";
+import { AddressPopup } from "../popups/AddressPopup/AddressPopup";
+import { PaytypePopup } from "../popups/PaytypePopup/PaytypePopup";
 import "./app.scss";
 
 export const App: React.FC = () => {
@@ -21,6 +23,8 @@ export const App: React.FC = () => {
                     </Route>
                 </Routes>
             </div>
+            <AddressPopup />
+            <PaytypePopup />
         </div>
     );
 };

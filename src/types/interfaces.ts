@@ -10,3 +10,10 @@ export interface IProduct {
 export interface IProductWithAmount extends IProduct {
     amount: number
 }
+
+export interface IAddress {
+    name: string,
+    phone: string,
+    email: string,
+    address: string
+}

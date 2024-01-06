@@ -1,5 +1,5 @@
 .cart {
-    padding: 10px;
+    padding: 10px 10px 20px 10px;
     position: absolute;
     top: 50px;
     right: 0px;
@@ -24,7 +24,14 @@
     &__list {
     }
     &__cost {
+        margin-top: 15px !important;
+        margin-bottom: 20px !important;
+    }
 
+    &__go-take-order {
+        padding: 7px;
+        background-color: rgb(222, 222, 222);
+        border-radius: 10px;
     }
 }
 

@@ -11,6 +11,11 @@ export const Cart: React.FC = () => {
     const cartCost = getCartCost();
     const dispatch = useDispatch()
 
+    function handleCloseCart(): void {
+        const cartNode = document.getElementById("cart");
+        cartNode?.classList.remove("popup_active");
+    }
+
     return (
         <div id="cart" className="cart">
             {cart.length == 0 ? (
@@ -37,7 +42,7 @@ export const Cart: React.FC = () => {
                         ))}
                     </ul>
                     <p className="cart__cost">Стоимость корзины: {cartCost}</p>
-                    <Link className="cart__go-take-order" to='/takeorder'>Сделать заказ</Link>
+                    <Link onClick={handleCloseCart} className="cart__go-take-order" to='/takeorder'>Сделать заказ</Link>
                 </>
             )}
         </div>

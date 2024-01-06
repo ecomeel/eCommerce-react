@@ -1,0 +1,45 @@
+.take-order {
+    &__title {
+        font-weight: 600;
+        font-size: 25px;
+    }
+
+    &__cost {
+        padding-top: 10px;
+        border-top: 1px solid rgb(211, 211, 211);
+    }
+
+    & > *:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+
+.order {
+    & > *:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    &__title {
+        padding-top: 10px;
+        border-top: 1px solid rgb(211, 211, 211);
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    &__item {
+        display: flex;
+        gap: 10px;
+    }
+    &__image {
+        width: 150px;
+        height: 150px;
+    }
+    &__subtitle {
+        font-weight: 600;
+    }
+    &__text-wrapper {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
