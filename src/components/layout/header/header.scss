@@ -1,6 +1,8 @@
 .header {
     position: relative;
-    margin-bottom: 50px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid black;
     &__logo-wrapper {
         display: flex;
         justify-content: space-between;

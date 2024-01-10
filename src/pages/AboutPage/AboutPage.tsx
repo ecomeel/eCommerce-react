@@ -5,7 +5,7 @@ import "./about-page.scss";
 export const AboutPage: React.FC = () => {
     return (
         <div className="about">
-            <h2 className="title">About Us</h2>
+            <h2 className="title">Немного информации о нас :)</h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero facilis recusandae quos distinctio? Hic ratione dolores fugit facere, voluptatibus perferendis est, recusandae inventore id distinctio eveniet, perspiciatis vel rerum. Labore?</p>
             <p>Dolorem, dolorum illo! Distinctio laudantium officia possimus debitis aliquid. Placeat commodi nesciunt suscipit temporibus ea vero, impedit qui earum, dolorum et ducimus maiores veniam illum natus repellendus sunt optio? Delectus.</p>
             <p>Numquam quam eius laudantium omnis, hic obcaecati error libero veritatis sequi tempore odio recusandae, placeat dicta beatae nostrum repudiandae, fugit ipsa illo natus veniam animi? Commodi illum nulla a placeat!</p>

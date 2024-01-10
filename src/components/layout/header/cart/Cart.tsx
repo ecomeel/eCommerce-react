@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
@@ -13,14 +13,46 @@ export const Cart: React.FC = () => {
     const cart = getCartItems();
     const cartCost = getCartCost();
     const dispatch = useDispatch();
+    const cartRef = useRef(null);
 
+
+    // useEffect(() => {
+    //     const cartNode = cartRef.current! as HTMLElement;
+
+    //     if (!cartNode.classList.contains('popup_active')) return
+
+    //     function handleClickOutSide(event: MouseEvent) {
+    //         const cartNode = cartRef.current! as HTMLElement;
+    //         const elem = event.target as HTMLElement;
+    //         console.log(elem)
+    //         console.log(cartNode)
+    
+    //         if (cartNode && !cartNode.contains(elem)) {
+    //             handleCloseCart();
+
+    //         }
+    //     }
+
+    //     document.addEventListener("click", handleClickOutSide);
+    //     return () => {
+    //         document.removeEventListener("click", handleClickOutSide);
+    //     };
+        
+    // }, []);
+
+    useEffect(() => {
+        console.log('Cart Did mount')
+        console.log(cartRef.current)
+    }, []);
+
+    // Удалить функция
     function handleCloseCart(): void {
         const cartNode = document.getElementById("cart");
         cartNode?.classList.remove("popup_active");
     }
 
     return (
-        <div id="cart" className="cart">
+        <div id="cart" className="cart popup_active">
             {cart.length == 0 ? (
                 <p className="cart__title">Корзина пуста</p>
             ) : (

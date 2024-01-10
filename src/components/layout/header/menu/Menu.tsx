@@ -7,11 +7,11 @@ import "./menu.scss";
 const setActive = ({ isActive }: { isActive: boolean }) =>
     isActive ? "menu__item menu__item_active" : "menu__item";
 
-export const Menu: React.FC = () => {
-    function handleOpenCart(): void {
-        const cartNode = document.getElementById("cart");
-        cartNode?.classList.toggle("popup_active");
-    }
+export const Menu: React.FC = (props: any) => {
+    // function handleOpenCart(): void {
+    //     const cartNode = document.getElementById("cart");
+    //     cartNode?.classList.toggle("popup_active");
+    // }
 
     return (
         <nav className="menu">
@@ -28,7 +28,8 @@ export const Menu: React.FC = () => {
                 Кабинет
             </NavLink>
             <FaBasketShopping
-                onClick={handleOpenCart}
+                // onClick={handleOpenCart}
+                onClick={() => props.handlerChangeCartVisible((visible: boolean) => !visible)}
                 className="menu__item menu__item_cart"
             />
         </nav>
